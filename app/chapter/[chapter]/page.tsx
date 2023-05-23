@@ -11,7 +11,7 @@ export default async function Chapter({
       chapter: Number(chapter),
     },
   });
-  console.log(chapterInfo);
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-col">
