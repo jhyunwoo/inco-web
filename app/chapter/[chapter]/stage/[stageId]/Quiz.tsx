@@ -2,8 +2,14 @@
 
 import type { questions } from "@prisma/client";
 
-export default function Quiz({ questions }: { questions: questions[] }) {
-  console.log(questions);
+export default function Quiz({
+  questions,
+  keywords,
+}: {
+  questions: questions[];
+  keywords: string[];
+}) {
+  console.log(questions, keywords);
   return (
     <div>
       <div onClick={() => console.log(questions)}>Quiz</div>

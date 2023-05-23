@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import Quiz from "./quiz";
+import Quiz from "./Quiz";
 
 export default async function ChapterStage1({
   params: { chapter, stageId },
@@ -23,7 +23,6 @@ export default async function ChapterStage1({
         keywordList.push(keywords[i].keyword[j]);
       }
     }
-    console.log(questions);
 
     return (
       <div className="flex flex-col">
@@ -31,7 +30,7 @@ export default async function ChapterStage1({
           Chapter {chapter} Stage {stageId}
         </div>
         <div>
-          <Quiz></Quiz>
+          <Quiz questions={questions} keywords={keywordList} />
         </div>
       </div>
     );
