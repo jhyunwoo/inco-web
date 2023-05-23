@@ -1,6 +1,5 @@
 import BottomBar from "@/components/BottomBar";
 import HeadBar from "@/components/HeadBar";
-import Layout from "@/components/Layout";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
 
