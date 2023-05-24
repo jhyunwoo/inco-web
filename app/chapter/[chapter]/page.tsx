@@ -10,6 +10,13 @@ export default async function Chapter({
     where: {
       chapter: Number(chapter),
     },
+    include: {
+      questions: {
+        select: {
+          id: true,
+        },
+      },
+    },
   });
 
   return (
@@ -18,22 +25,25 @@ export default async function Chapter({
         <div className="text-2xl font-bold">Chapter {chapterInfo?.chapter}</div>
         <div className="text-lg font-semibold mt-1">{chapterInfo?.title}</div>
       </div>
-      <div className="flex flex-col mt-4 space-y-3">
+      <div className="flex justify-start items-center py-2 text-base font-semibold">
+        <div>총 {chapterInfo?.questions.length}문제</div>
+      </div>
+      <div className="flex flex-col mt-4 space-y-3 ">
         <Link
           href={`/chapter/${chapter}/stage/1`}
-          className="bg-cyan-400 hover:bg-cyan-500 py-8 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"
+          className="bg-cyan-400 hover:bg-cyan-500 py-6 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"
         >
           Stage 1
         </Link>
         <Link
           href={`/chapter/${chapter}/stage/2`}
-          className="bg-sky-400 hover:bg-sky-500 py-8 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"
+          className="bg-sky-400 hover:bg-sky-500 py-6 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"
         >
           Stage 2
         </Link>
         <Link
           href={`/chapter/${chapter}/stage/3`}
-          className="bg-blue-400 hover:bg-blue-500 py-8 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"
+          className="bg-blue-400 hover:bg-blue-500 py-6 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"
         >
           Stage 3
         </Link>

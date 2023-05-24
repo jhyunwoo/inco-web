@@ -36,7 +36,6 @@ export default function Quiz({ questions }: { questions: questions[] }) {
     const res = await axios.put("/api/user/updatePoint", {
       data: { score: score },
     });
-    console.log(res);
   }
 
   useEffect(() => {
