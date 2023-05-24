@@ -1,9 +1,8 @@
 "use client";
 
 import type { questions } from "@prisma/client";
-import { useSession } from "next-auth/react";
-import Link from "next/link";
-import { useParams } from "next/navigation";
+import axios from "axios";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Quiz({ questions }: { questions: questions[] }) {
@@ -11,9 +10,10 @@ export default function Quiz({ questions }: { questions: questions[] }) {
   const [questionNumber, setQuestionNumber] = useState<number>(0);
   const [options, setOptions] = useState<string[]>();
   const [score, setScore] = useState<number>(0);
-  const { data: session } = useSession();
 
-  const { chapter } = useParams();
+  const router = useRouter();
+
+  const { chapter, stageId } = useParams();
 
   function shuffle(array: any[]) {
     let newArray = array;
@@ -31,12 +31,20 @@ export default function Quiz({ questions }: { questions: questions[] }) {
     }
   }
 
+  async function questionEnd() {
+    router.replace(`/chapter/${chapter}`);
+    const res = await axios.put("/api/user/updatePoint", {
+      data: { score: score },
+    });
+    console.log(res);
+  }
+
   useEffect(() => {
-    if (questions.length < 11) {
+    if (questions.length <= Number(stageId) * 10) {
       setSelectedQuestions(questions);
     } else {
       let randomQuestions: questions[] = [];
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < Number(stageId) * 10; i++) {
         let randomValue =
           questions[Math.floor(Math.random() * questions.length)];
         if (randomQuestions.includes(randomValue)) {
@@ -48,13 +56,16 @@ export default function Quiz({ questions }: { questions: questions[] }) {
       }
       setSelectedQuestions(randomQuestions);
     }
-  }, [questions]);
+  }, [questions, stageId]);
 
   useEffect(() => {
     if (selectedQuestions === undefined) return;
     if (selectedQuestions[questionNumber]) {
       let selectedOptions: string[] = [];
-      if (selectedQuestions[questionNumber].options.length > 3) {
+      if (
+        selectedQuestions[questionNumber].options.length >
+        Number(stageId) + 2
+      ) {
         for (let i = 0; i < 3; i++) {
           let randomValue =
             selectedQuestions[questionNumber].options[
@@ -77,7 +88,7 @@ export default function Quiz({ questions }: { questions: questions[] }) {
         setOptions(shuffle(selectedOptions));
       }
     }
-  }, [questionNumber, selectedQuestions]);
+  }, [questionNumber, selectedQuestions, stageId]);
 
   return (
     <div className="flex flex-col w-full">
@@ -90,13 +101,13 @@ export default function Quiz({ questions }: { questions: questions[] }) {
                   selectedQuestions[questionNumber]?.question}
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-2">
+            <div className="grid grid-cols-1 gap-4 fixed bottom-16 right-4 left-4">
               {options &&
                 options.map((data, key) => (
                   <button
                     onClick={() => checkAnswer(data)}
                     key={key}
-                    className="bg-sky-50 shadow-lg  hover:bg-sky-100 transition duration-200 p-2 rounded-lg flex text-base text-left font-semibold"
+                    className="bg-white ring-2 ring-sky-400 shadow-md hover:shadow-xl transition duration-200 p-2 rounded-lg flex text-base text-left font-semibold"
                   >
                     <div>{data}</div>
                   </button>
@@ -112,12 +123,12 @@ export default function Quiz({ questions }: { questions: questions[] }) {
               </div>
             </div>
             <div className="w-full flex mt-8">
-              <Link
-                href={`/chapter/${chapter}`}
+              <button
+                onClick={questionEnd}
                 className="w-full p-2 px-4 text-center bg-sky-400 text-white font-semibold rounded-lg shadow-lg hover:bg-sky-500 transition duration-200"
               >
                 종료
-              </Link>
+              </button>
             </div>
           </div>
         ))}

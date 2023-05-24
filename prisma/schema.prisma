@@ -45,11 +45,10 @@ model Session {
 model User {
   id            String    @id @default(cuid())
   name          String?
-  bio           String?   @db.Text
-  age           Int?
+  point         Int?
   email         String?   @unique
   emailVerified DateTime?
-  image         String? 
+  image         String?
   accounts      Account[]
   sessions      Session[]
 }
@@ -70,11 +69,11 @@ model chapters {
 }
 
 model questions {
-  id      Int      @id @default(autoincrement())
-  question String
-  options String[]
-answer String
-type String
+  id         Int       @id @default(autoincrement())
+  question   String
+  options    String[]
+  answer     String
+  type       String
   chapters   chapters? @relation(fields: [chaptersId], references: [id])
   chaptersId String?
-} 
+}
