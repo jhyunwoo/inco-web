@@ -16,7 +16,7 @@ export default function HeadBar() {
     } else {
       setPage("Quiz");
     }
-  }, []);
+  }, [pathname]);
   return (
     <div className="fixed top-0 right-0 left-0 p-2 px-4 bg-slate-50">
       <div className="text-xl font-semibold">Inco - {page}</div>

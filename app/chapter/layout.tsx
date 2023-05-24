@@ -1,6 +1,5 @@
 import BottomBar from "@/components/BottomBar";
 import HeadBar from "@/components/HeadBar";
-import Layout from "@/components/Layout";
 
 export default function ChapterLayout({
   children,
@@ -8,10 +7,10 @@ export default function ChapterLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Layout>
+    <div>
       <HeadBar />
       <BottomBar />
       {children}
-    </Layout>
+    </div>
   );
 }

@@ -51,6 +51,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  results       results[]
 }
 
 model VerificationToken {
@@ -66,6 +67,7 @@ model chapters {
   chapter   Int
   title     String
   questions questions[]
+  results  results[]
 }
 
 model questions {
@@ -76,4 +78,16 @@ model questions {
   type       String
   chapters   chapters? @relation(fields: [chaptersId], references: [id])
   chaptersId String?
+}
+
+model results {
+  id         String    @id @default(cuid())
+  user       User      @relation(fields: [userId], references: [id])
+  userId     String
+  chapter chapters @relation(fields: [chapterId], references: [id])
+  chapterId String
+  stage Int
+  answerlist Boolean[]
+  accuracy   Int
+  createdAt  DateTime  @default(now())
 }

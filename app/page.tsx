@@ -16,7 +16,7 @@ export default async function Home() {
         <div className="flex h-80 ">
           {chapters.map((data, key) => (
             <Link
-              href={`/chapter/${data.chapter}`}
+              href={`/chapter/${data.id}`}
               key={key}
               className="w-screen p-8 snap-center "
             >

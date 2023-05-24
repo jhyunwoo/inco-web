@@ -5,7 +5,8 @@ import prisma from "@/lib/prisma";
 
 export async function PUT(request: Request) {
   const requestData = await request.json();
-  const pointData: number = requestData.data.score * 10;
+  const { score, result, chapter, stage } = requestData.data;
+  const pointData: number = score * 10;
   const session = await getServerSession(authOptions);
   if (session) {
     if (typeof session?.user?.email !== "string") return;
@@ -15,6 +16,31 @@ export async function PUT(request: Request) {
       },
       data: {
         point: { increment: pointData },
+      },
+    });
+
+    let score = 0;
+    for (let i = 0; i < result.length; i++) {
+      if (result[i]) {
+        score++;
+      }
+    }
+    let accuracy = Math.floor((score / result.length) * 100);
+    const newResult = await prisma.results.create({
+      data: {
+        user: {
+          connect: {
+            email: session.user.email,
+          },
+        },
+        chapter: {
+          connect: {
+            id: chapter,
+          },
+        },
+        stage: Number(stage),
+        answerlist: result,
+        accuracy: accuracy,
       },
     });
     return NextResponse.json(updateUser);

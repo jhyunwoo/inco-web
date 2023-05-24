@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/authOptions";
+import Recoil from "@/components/Recoil";
+import CustomLoading from "@/components/CustomLoading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,9 +26,14 @@ export default async function RootLayout({
   }
   return (
     <AuthProvider>
-      <html lang="kr">
-        <body className={inter.className}>{children}</body>
-      </html>
+      <Recoil>
+        <html lang="kr">
+          <body className={inter.className}>
+            <CustomLoading />
+            {children}
+          </body>
+        </html>
+      </Recoil>
     </AuthProvider>
   );
 }

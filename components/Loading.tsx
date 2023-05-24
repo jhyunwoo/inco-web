@@ -1,4 +1,4 @@
-import { Cog6ToothIcon } from "@heroicons/react/24/solid";
+import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 
 export default function Loading() {
   return (

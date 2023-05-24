@@ -6,23 +6,18 @@ export default async function ChapterStage1({
 }: {
   params: { chapter: string; stageId: string };
 }) {
-  if (Number(chapter)) {
+  if (chapter) {
     const questions = await prisma.questions.findMany({
       where: {
         chapters: {
-          chapter: Number(chapter),
+          id: chapter,
         },
       },
     });
 
     return (
       <div className="flex flex-col">
-        <div className="text-2xl font-bold">
-          Chapter {chapter} Stage {stageId}
-        </div>
-        <div>
-          <Quiz questions={questions} />
-        </div>
+        <Quiz questions={questions} />
       </div>
     );
   } else {
