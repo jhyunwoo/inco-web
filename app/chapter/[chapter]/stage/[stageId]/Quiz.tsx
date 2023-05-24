@@ -103,7 +103,7 @@ export default function Quiz({ questions }: { questions: questions[] }) {
     <div className="flex flex-col w-full h-screen p-4 pt-12 pb-20">
       {selectedQuestions &&
         (selectedQuestions[questionNumber] ? (
-          <div className="w-full h-1/3  flex justify-center items-center">
+          <div className="w-full   flex justify-center items-center">
             <div className="bg-white p-4 rounded-xl shadow-lg font-semibold my-4">
               <div className="text-lg">
                 {selectedQuestions &&
@@ -124,21 +124,20 @@ export default function Quiz({ questions }: { questions: questions[] }) {
             </div>
           </div>
         ) : (
-          <div className="w-full h-screen ">
-            <div className=" h-1/2 w-full p-4  flex flex-col justify-center items-center">
+          <div className="w-full h-full flex flex-col justify-between">
+            <div className="w-full py-24  flex flex-col items-center">
               <div className="text-xl">총 점수</div>
               <div className="text-2xl font-semibold">
                 {Math.floor((score / selectedQuestions.length) * 100)}점
               </div>
             </div>
-            <div className="w-full flex h-1/2 flex-col items-center justify-end pb-4">
-              <button
-                onClick={questionEnd}
-                className="text-lg w-full p-3 px-4 text-center bg-sky-400 text-white font-semibold rounded-lg shadow-lg hover:bg-sky-500 transition duration-200"
-              >
-                종료
-              </button>
-            </div>
+
+            <button
+              onClick={questionEnd}
+              className="text-lg w-full p-3 px-4 text-center bg-sky-400 text-white font-semibold rounded-lg shadow-lg hover:bg-sky-500 transition duration-200 "
+            >
+              종료
+            </button>
           </div>
         ))}
     </div>

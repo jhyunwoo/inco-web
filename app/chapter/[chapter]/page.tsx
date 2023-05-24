@@ -61,9 +61,9 @@ export default async function Chapter({
     select: { accuracy: true },
   });
   return (
-    <div className="w-full h-screen p-4 pt-12 pb-16 flex flex-col justify-center items-center">
-      <div className="bg-white p-4 rounded-xl shadow-lg w-full h-1/2 flex flex-col">
-        <div className="flex flex-col items-start justify-center w-full h-1/2">
+    <div className="w-full min-h-screen p-4 pt-12 pb-20 flex flex-col justify-center items-center space-y-8">
+      <div className="bg-white p-4 rounded-xl shadow-lg w-full  flex flex-col  items-start">
+        <div className="flex flex-col items-start justify-center w-full">
           <div className="text-3xl font-bold">
             Chapter {chapterInfo?.chapter}
           </div>
@@ -72,7 +72,7 @@ export default async function Chapter({
             총 {chapterInfo?.questions.length}문제
           </div>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col  w-full">
           <div className="text-lg font-semibold">최고점</div>
           <div className="w-full">
             <div className="flex bg-slate-100 rounded-t-lg">
@@ -100,7 +100,7 @@ export default async function Chapter({
           </div>
         </div>
       </div>
-      <div className="flex flex-col h-1/2 space-y-3 w-full justify-center ">
+      <div className="flex flex-col  space-y-3 w-full justify-center ">
         <Link
           href={`/chapter/${chapter}/stage/1`}
           className="bg-cyan-400 hover:bg-cyan-500 py-6 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"

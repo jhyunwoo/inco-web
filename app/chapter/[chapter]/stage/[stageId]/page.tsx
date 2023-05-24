@@ -2,7 +2,7 @@ import prisma from "@/lib/prisma";
 import Quiz from "./Quiz";
 
 export default async function ChapterStage1({
-  params: { chapter, stageId },
+  params: { chapter },
 }: {
   params: { chapter: string; stageId: string };
 }) {
@@ -15,11 +15,7 @@ export default async function ChapterStage1({
       },
     });
 
-    return (
-      <div className="flex flex-col">
-        <Quiz questions={questions} />
-      </div>
-    );
+    return <Quiz questions={questions} />;
   } else {
     return <div className="m-auto text-2xl font-semibold">Invalid Path</div>;
   }
