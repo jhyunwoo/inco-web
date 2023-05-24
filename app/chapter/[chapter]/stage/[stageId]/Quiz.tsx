@@ -100,10 +100,10 @@ export default function Quiz({ questions }: { questions: questions[] }) {
   }, [questionNumber, selectedQuestions, stageId]);
 
   return (
-    <div className="flex flex-col w-full h-screen p-4 pt-12 pb-24">
+    <div className="flex flex-col w-full p-4 pt-12 pb-16">
       {selectedQuestions &&
         (selectedQuestions[questionNumber] ? (
-          <div className="w-full   flex justify-center items-center">
+          <div className="w-full flex justify-center items-center">
             <div className="bg-white p-4 rounded-xl shadow-lg font-semibold my-4">
               <div className="text-lg">
                 {selectedQuestions &&
@@ -124,7 +124,7 @@ export default function Quiz({ questions }: { questions: questions[] }) {
             </div>
           </div>
         ) : (
-          <div className="w-full h-full flex flex-col justify-between">
+          <div className="w-full h-full flex flex-col">
             <div className="w-full py-24  flex flex-col items-center">
               <div className="text-xl">총 점수</div>
               <div className="text-2xl font-semibold">
