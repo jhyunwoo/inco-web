@@ -32,7 +32,7 @@ export default async function Chapter({
       stage: 1,
     },
     orderBy: {
-      id: "desc",
+      accuracy: "desc",
     },
     select: { accuracy: true },
   });
@@ -44,7 +44,7 @@ export default async function Chapter({
       stage: 2,
     },
     orderBy: {
-      id: "desc",
+      accuracy: "desc",
     },
     select: { accuracy: true },
   });
@@ -56,7 +56,7 @@ export default async function Chapter({
       stage: 3,
     },
     orderBy: {
-      id: "desc",
+      accuracy: "desc",
     },
     select: { accuracy: true },
   });
