@@ -18,7 +18,7 @@ export default async function Home() {
             <Link
               href={`/chapter/${data.chapter}`}
               key={key}
-              className="w-screen p-12 snap-center "
+              className="w-screen p-8 snap-center "
             >
               <div className=" bg-white p-4 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-start">
                 <div className="text-3xl font-semibold">

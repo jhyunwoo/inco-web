@@ -71,9 +71,10 @@ model chapters {
 
 model questions {
   id      Int      @id @default(autoincrement())
-  content String
-  keyword String[]
-
+  question String
+  options String[]
+answer String
+type String
   chapters   chapters? @relation(fields: [chaptersId], references: [id])
   chaptersId String?
-}
+} 

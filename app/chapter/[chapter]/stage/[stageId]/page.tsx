@@ -14,15 +14,6 @@ export default async function ChapterStage1({
         },
       },
     });
-    const keywords = await prisma.questions.findMany({
-      select: { keyword: true },
-    });
-    let keywordList: string[] = [];
-    for (let i = 0; i < keywords?.length; i++) {
-      for (let j = 0; j < keywords[i].keyword?.length; j++) {
-        keywordList.push(keywords[i].keyword[j]);
-      }
-    }
 
     return (
       <div className="flex flex-col">
@@ -30,7 +21,7 @@ export default async function ChapterStage1({
           Chapter {chapter} Stage {stageId}
         </div>
         <div>
-          <Quiz questions={questions} keywords={keywordList} />
+          <Quiz questions={questions} />
         </div>
       </div>
     );
