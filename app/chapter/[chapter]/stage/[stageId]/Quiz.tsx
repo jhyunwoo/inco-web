@@ -100,7 +100,7 @@ export default function Quiz({ questions }: { questions: questions[] }) {
   }, [questionNumber, selectedQuestions, stageId]);
 
   return (
-    <div className="flex flex-col w-full h-screen p-4 pt-12 pb-20">
+    <div className="flex flex-col w-full h-screen p-4 pt-12 pb-24">
       {selectedQuestions &&
         (selectedQuestions[questionNumber] ? (
           <div className="w-full   flex justify-center items-center">
