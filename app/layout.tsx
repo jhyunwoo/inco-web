@@ -7,6 +7,7 @@ import { authOptions } from "@/lib/authOptions";
 import Recoil from "@/components/Recoil";
 import CustomLoading from "@/components/CustomLoading";
 import { Analytics } from "@vercel/analytics/react";
+import GoogleAnalytics from "@/components/Analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default async function RootLayout({
             <CustomLoading />
             {children}
             <Analytics />
+            <GoogleAnalytics GA_MEASUREMENT_ID="G-XF8NNSCT6H" />
           </body>
         </html>
       </Recoil>
