@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/authOptions";
 import Recoil from "@/components/Recoil";
 import CustomLoading from "@/components/CustomLoading";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default async function RootLayout({
           <body className={inter.className}>
             <CustomLoading />
             {children}
+            <Analytics />
           </body>
         </html>
       </Recoil>
