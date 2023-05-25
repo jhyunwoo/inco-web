@@ -39,13 +39,23 @@ export default function Quiz({ questions }: { questions: questions[] }) {
   }
 
   async function questionEnd() {
-    setIsLoading(true);
-    const res = await axios.put("/api/user/updatePoint", {
-      data: { score: score, result: result, chapter: chapter, stage: stageId },
-    });
-    router.replace(`/chapter/${chapter}`);
-    setIsLoading(false);
-    router.refresh();
+    if (selectedQuestions === undefined) return;
+    if (selectedQuestions?.length > 0) {
+      setIsLoading(true);
+      const res = await axios.put("/api/user/updatePoint", {
+        data: {
+          score: score,
+          result: result,
+          chapter: chapter,
+          stage: stageId,
+        },
+      });
+      router.replace(`/chapter/${chapter}`);
+      setIsLoading(false);
+      router.refresh();
+    } else {
+      router.replace(`/chapter/${chapter}`);
+    }
   }
 
   useEffect(() => {
