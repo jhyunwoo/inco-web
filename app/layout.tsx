@@ -34,7 +34,7 @@ export default async function RootLayout({
             <CustomLoading />
             {children}
             <Analytics />
-            <GoogleAnalytics GA_MEASUREMENT_ID="G-XF8NNSCT6H" />
+            <GoogleAnalytics GA_TRACKING_ID={"G-XF8NNSCT6H"} />
           </body>
         </html>
       </Recoil>
