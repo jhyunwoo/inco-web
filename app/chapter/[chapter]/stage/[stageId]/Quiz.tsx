@@ -105,7 +105,7 @@ export default function Quiz({ questions }: { questions: questions[] }) {
       {selectedQuestions &&
         (selectedQuestions[questionNumber] ? (
           <div className="w-full flex justify-center items-center">
-            <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-lg font-semibold my-4 w-full flex flex-col justify-center items-center">
+            <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-lg font-semibold my-4 w-full flex flex-col justify-center items-start">
               <div className="flex flex-col justify-center items-start">
                 <div>
                   {questionNumber + 1}/{selectedQuestions?.length}
