@@ -2,27 +2,10 @@ import { SignOutButton } from "@/components/AuthButton";
 import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
 import prisma from "@/lib/prisma";
+import { getGrade, getGradeName } from "@/lib/getGrade";
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);
-
-  function getGrade(score: any) {
-    if (score < 100) {
-      return "bg-red-400";
-    } else if (score < 200) {
-      return "bg-orange-400";
-    } else if (score < 400) {
-      return "bg-yellow-400";
-    } else if (score < 600) {
-      return "bg-green-400";
-    } else if (score < 800) {
-      return "bg-blue-400";
-    } else if (score < 1000) {
-      return "bg-violet-400";
-    } else {
-      return "bg-gradient-to-r from-red-400 via-yellow-400 to-blue-400";
-    }
-  }
 
   if (typeof session?.user?.email === "string") {
     const userInfo = await prisma.user.findUnique({
@@ -41,7 +24,7 @@ export default async function Profile() {
                 userInfo?.point
               )}`}
             >
-              {userInfo?.point}
+              {getGradeName(userInfo?.point)} | {userInfo?.point}점
             </div>
           </div>
         </div>

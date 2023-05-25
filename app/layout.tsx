@@ -7,12 +7,11 @@ import { authOptions } from "@/lib/authOptions";
 import Recoil from "@/components/Recoil";
 import CustomLoading from "@/components/CustomLoading";
 import { Analytics } from "@vercel/analytics/react";
-import GoogleAnalytics from "@/components/Analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Inco | 정보통신 퀴즈",
+  title: "Inco | Quiz",
   description: "2023 정보통신 2회고사 범위 퀴즈 게임",
 };
 
@@ -34,7 +33,6 @@ export default async function RootLayout({
             <CustomLoading />
             {children}
             <Analytics />
-            <GoogleAnalytics GA_TRACKING_ID={"G-XF8NNSCT6H"} />
           </body>
         </html>
       </Recoil>
