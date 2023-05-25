@@ -30,6 +30,7 @@ export default async function Chapter({
         email: session?.user?.email,
       },
       stage: 1,
+      chapterId: chapter,
     },
     orderBy: {
       accuracy: "desc",
@@ -42,6 +43,7 @@ export default async function Chapter({
         email: session?.user?.email,
       },
       stage: 2,
+      chapterId: chapter,
     },
     orderBy: {
       accuracy: "desc",
@@ -54,6 +56,7 @@ export default async function Chapter({
         email: session?.user?.email,
       },
       stage: 3,
+      chapterId: chapter,
     },
     orderBy: {
       accuracy: "desc",
