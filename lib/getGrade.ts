@@ -1,4 +1,4 @@
-export function getGrade(score: any) {
+export function getGrade(score: number) {
   if (score < 200) {
     return "bg-red-400";
   } else if (score < 400) {
@@ -16,7 +16,7 @@ export function getGrade(score: any) {
   }
 }
 
-export function getGradeName(score: any) {
+export function getGradeName(score: number) {
   if (score < 200) {
     return "Bronze";
   } else if (score < 400) {
