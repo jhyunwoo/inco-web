@@ -49,6 +49,7 @@ export default function Quiz({ questions }: { questions: questions[] }) {
   }
 
   useEffect(() => {
+    console.log(questions.length);
     if (questions.length <= Number(stageId) * 10) {
       setSelectedQuestions(questions);
     } else {

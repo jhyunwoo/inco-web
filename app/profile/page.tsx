@@ -7,17 +7,17 @@ export default async function Profile() {
   const session = await getServerSession(authOptions);
 
   function getGrade(score: any) {
-    if (score < 50) {
+    if (score < 100) {
       return "bg-red-400";
-    } else if (score < 100) {
-      return "bg-orange-400";
     } else if (score < 200) {
-      return "bg-yellow-400";
-    } else if (score < 300) {
-      return "bg-green-400";
+      return "bg-orange-400";
     } else if (score < 400) {
+      return "bg-yellow-400";
+    } else if (score < 600) {
+      return "bg-green-400";
+    } else if (score < 800) {
       return "bg-blue-400";
-    } else if (score < 500) {
+    } else if (score < 1000) {
       return "bg-violet-400";
     } else {
       return "bg-gradient-to-r from-red-400 via-yellow-400 to-blue-400";
