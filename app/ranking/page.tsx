@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import Reload from "./Reload";
 
 export const fetchCache = "default-no-store";
+export const preferredRegion = "icn1";
 
 export default async function Ranking() {
   const userList = await prisma.user.findMany({
