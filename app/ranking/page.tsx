@@ -15,7 +15,8 @@ export default async function Ranking() {
     },
   });
 
-  const date = new Date();
+  let date = new Date();
+  date.setTime(date.getTime() + 9 * 60 * 60 * 1000);
   const korDate = new Intl.DateTimeFormat("ko-KR", {
     dateStyle: "long",
     timeStyle: "short",
