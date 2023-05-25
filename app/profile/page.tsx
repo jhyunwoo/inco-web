@@ -47,7 +47,7 @@ export default async function Profile() {
     });
 
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col space-y-4">
         <div className="bg-white p-4 rounded-lg shadow-xl">
           <div className="text-2xl font-bold">{session?.user?.name}</div>
           <div className="text-base font-base">{session?.user?.email}</div>
@@ -60,6 +60,53 @@ export default async function Profile() {
             >
               {getGradeName(userInfo?.point)} | {userInfo?.point}점
             </div>
+          </div>
+        </div>
+        <div className="bg-white p-4 rounded-lg shadow-xl grid grid-cols-2 gap-2">
+          <div className="col-span-2 text-lg font-semibold text-center">
+            랭크 기준
+          </div>
+          <div className="flex items-center space-x-2 justify-between">
+            <div className="bg-red-400 p-1 px-2 rounded-md text-white text-center w-1/2">
+              Bronze
+            </div>
+            <div>0점</div>
+          </div>
+          <div className="flex items-center space-x-2 justify-between">
+            <div className="bg-orange-400 p-1 px-2 rounded-md text-white text-center w-1/2">
+              Silver
+            </div>
+            <div>200점</div>
+          </div>
+          <div className="flex items-center space-x-2 justify-between">
+            <div className="bg-yellow-400 p-1 px-2 rounded-md text-white text-center w-1/2">
+              Gold
+            </div>
+            <div>400점</div>
+          </div>
+          <div className="flex items-center space-x-2 justify-between">
+            <div className="bg-gradient-to-r from-emerald-600 via-green-500 to-lime-600 p-1 px-2 rounded-md text-white text-center w-1/2">
+              Platinum
+            </div>
+            <div>600점</div>
+          </div>
+          <div className="flex items-center space-x-2 justify-between">
+            <div className="bg-gradient-to-r from-cyan-600 via-blue-500 to-sky-600 p-1 px-2 rounded-md text-white text-center w-1/2">
+              Diamond
+            </div>
+            <div>800점</div>
+          </div>
+          <div className="flex items-center space-x-2 justify-between">
+            <div className="bg-gradient-to-r from-purple-600 via-blue-500 to-violet-600 p-1 px-2 rounded-md text-white text-center w-1/2">
+              Master
+            </div>
+            <div>1000점</div>
+          </div>
+          <div className="flex items-center space-x-2 justify-between">
+            <div className="bg-gradient-to-r from-red-400 via-yellow-400 to-blue-400 p-1 px-2 rounded-md text-white text-center w-1/2">
+              Challenger
+            </div>
+            <div>1500점</div>
           </div>
         </div>
         <div className="flex justify-center items-center p-16">
