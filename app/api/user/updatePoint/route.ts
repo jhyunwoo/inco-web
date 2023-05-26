@@ -5,19 +5,10 @@ import prisma from "@/lib/prisma";
 
 export async function PUT(request: Request) {
   const requestData = await request.json();
-  const { score, result, chapter, stage } = requestData.data;
-  const pointData: number = score * 10;
+  const { result, chapter, stage } = requestData.data;
   const session = await getServerSession(authOptions);
   if (session) {
     if (typeof session?.user?.email !== "string") return;
-    const updateUser = await prisma.user.update({
-      where: {
-        email: session?.user?.email,
-      },
-      data: {
-        point: { increment: pointData },
-      },
-    });
 
     let score = 0;
     for (let i = 0; i < result.length; i++) {
@@ -43,7 +34,39 @@ export async function PUT(request: Request) {
         accuracy: accuracy,
       },
     });
-    return NextResponse.json(updateUser);
+    let point: number = 0;
+    for (let i = 0; i < 6; i++) {
+      for (let j = 0; j < 3; j++) {
+        let higestResult: any = await prisma.results.findFirst({
+          where: {
+            user: {
+              email: session.user.email,
+            },
+            chapter: {
+              chapter: i + 1,
+            },
+            stage: j + 1,
+          },
+          orderBy: {
+            accuracy: "desc",
+          },
+        });
+        if (typeof higestResult?.accuracy === "number") {
+          point += higestResult.accuracy;
+        }
+      }
+    }
+
+    const userUpdate = await prisma.user.update({
+      where: {
+        email: session.user.email,
+      },
+      data: {
+        point: point,
+      },
+    });
+
+    return NextResponse.json(userUpdate);
   } else {
     return NextResponse.json("need to auth");
   }

@@ -44,7 +44,6 @@ export default function Quiz({ questions }: { questions: questions[] }) {
       setIsLoading(true);
       const res = await axios.put("/api/user/updatePoint", {
         data: {
-          score: score,
           result: result,
           chapter: chapter,
           stage: stageId,
