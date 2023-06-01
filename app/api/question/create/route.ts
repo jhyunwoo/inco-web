@@ -15,7 +15,7 @@ export async function GET() {
         ],
         answer: "데이터 전송",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question:
@@ -23,28 +23,28 @@ export async function GET() {
         options: ["스위치", "허브", "립리터", "ISP", "DNS"],
         answer: "프로토콜",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question: "네트워크에서 전송되는 작은 데이터 조각을 ___(이)라고 한다.",
         options: ["프레임", "세그먼트", "비트", "바이트"],
         answer: "패킷",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question: "컴퓨터는 ___과(와) ___만 이해한다.",
         options: ["A, B", "진실, 거짓", "양, 음", "1, -1"],
         answer: "0, 1",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question: "정보를 표시하는 최소의 단위를 ___(이)라고 한다.",
         options: ["바이트", "픽셀", "그램", "헤르츠", "파운드"],
         answer: "비트",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question:
@@ -52,7 +52,7 @@ export async function GET() {
         options: ["왠", "ISP", "온프레미스", "클라우드"],
         answer: "랜",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question:
@@ -60,7 +60,7 @@ export async function GET() {
         options: ["랜", "ISP", "온프레미스", "클라우드"],
         answer: "왠",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question:
@@ -68,14 +68,14 @@ export async function GET() {
         options: ["ISO", "TCP/IP", "IQ", "IU", "IBM"],
         answer: "ISP",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question: "외부에 공개하기 위한 네트워크를___(이)라고 한다. ",
         options: ["이더넷", "DNS", "이큐에스", "DDoS"],
         answer: "DMZ",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question: "기업의 서버는 ___(이)나 클라우드 중 하나로 운영되고 있다.",
@@ -90,14 +90,14 @@ export async function GET() {
         ],
         answer: "온프레미스",
         type: "select",
-        chapterId: "clia7tncg0000zn99at3qx3r9",
+        chaptersId: "clia7tncg0000zn99at3qx3r9",
       },
       {
         question: "통신하기 위한 규칙을 ___(이)라고 한다. ",
         options: ["프레임", "퀴리", "DNS", "ISP"],
         answer: "프로토콜",
         type: "select",
-        chapterId: "clia87lmt0000zn1l76ff8k4a",
+        chaptersId: "clia87lmt0000zn1l76ff8k4a",
       },
       {
         question: "프로토콜의 주요 요소로 ___, ___,타이밍이있다.",
@@ -111,7 +111,7 @@ export async function GET() {
         ],
         answer: "구문, 의미",
         type: "select",
-        chapterId: "clia87lmt0000zn1l76ff8k4a",
+        chaptersId: "clia87lmt0000zn1l76ff8k4a",
       },
       {
         question: "프로토콜의 주요 기능에 대한 설명으로 옳은 것을 고르시오.",
@@ -128,14 +128,14 @@ export async function GET() {
         answer:
           "흐름 제어는 수신 측에서 데이터가 흘러 넘치지 않도록 수신 측의 처리 능력에 따라 송신 측에서 송신 데이터의 양을 조절하는 기능이다.",
         type: "select",
-        chapterId: "clia87lmt0000zn1l76ff8k4a",
+        chaptersId: "clia87lmt0000zn1l76ff8k4a",
       },
       {
         question: "ISO라는 국제표준화기구가 ___을(를) 제정했다. ",
         options: ["DNS 모델", "서브넷 모델", "ISP 모델", "패킷 모델"],
         answer: "OSI 모델",
         type: "select",
-        chapterId: "clia87lmt0000zn1l76ff8k4a",
+        chaptersId: "clia87lmt0000zn1l76ff8k4a",
       },
       {
         question:
@@ -151,7 +151,7 @@ export async function GET() {
         ],
         answer: "네트워크 접속, 인터넷, 전송, 응용",
         type: "select",
-        chapterId: "clia87lmt0000zn1l76ff8k4a",
+        chaptersId: "clia87lmt0000zn1l76ff8k4a",
       },
       {
         question:
@@ -159,14 +159,14 @@ export async function GET() {
         options: ["역캡슐화", "노멀라이즈", "온프레미스", "캐싱", "디텍팅"],
         answer: "캡슐화",
         type: "select",
-        chapterId: "clia87lmt0000zn1l76ff8k4a",
+        chaptersId: "clia87lmt0000zn1l76ff8k4a",
       },
       {
         question: "전기신호는 ___신호와 ___신호가 있다. ",
         options: ["랜, 왠", "0, 1", "비트, 바이트", "엑티브, 패시브"],
         answer: "아날로그, 디지털",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question:
@@ -174,7 +174,7 @@ export async function GET() {
         options: ["STP", "ATP", "KTP", "NTP", "OTP"],
         answer: "UTP",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question:
@@ -182,21 +182,21 @@ export async function GET() {
         options: ["CTP", "TTP", "UPT", "QTP", "XTP"],
         answer: "STP",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question: "랜 케이블의 양쪽 끝에는 ___ 커넥터가 붙어있다.",
         options: ["RJ-30", "AM-21", "DF-45", "AM-45"],
         answer: "RJ-45",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question: "랜 케이블에는 다이렉트 케이블과 ___ 케이블이 있다.",
         options: ["액티브", "패시브", "인터렉티브", "스마트", "더미"],
         answer: "크로스",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question:
@@ -204,35 +204,35 @@ export async function GET() {
         options: ["1", "2", "3", "5", "6", "7"],
         answer: "4",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question: "컴퓨터끼리 연결한다면 ___ 케이블을 사용한다.",
         options: ["다이렉트", "동적", "정적", "스마트", "더미"],
         answer: "크로스",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question: "___은(는) 네트워크를 연장하기 위한 장비이다. ",
         options: ["스위치", "온프레미스", "클라우드", "랙"],
         answer: "리피터",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question: "허브는 수신한 데이터를 모든 ___(으)로 전송한다.",
         options: ["패킷", "스위치", "라우터", "ISP"],
         answer: "포트",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question: "허브는 일반적으로 ___(이)라고 부른다.",
         options: ["스마트 허브", "라우팅 허브", "액티브 허브", "패시브 허브"],
         answer: "더미 허브",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
       {
         question:
@@ -240,7 +240,7 @@ export async function GET() {
         options: ["더미 허브", "라우팅 허브", "액티브 허브", "패시브 허브"],
         answer: "스위칭",
         type: "select",
-        chapterId: "clia87lmt0002zn1l7t4o3rjp",
+        chaptersId: "clia87lmt0002zn1l7t4o3rjp",
       },
     ],
   });
