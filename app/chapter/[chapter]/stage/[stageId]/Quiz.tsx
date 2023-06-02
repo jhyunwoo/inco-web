@@ -1,6 +1,7 @@
 "use client";
 
 import { loading } from "@/lib/recoil";
+import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import type { questions } from "@prisma/client";
 import axios from "axios";
 import { useParams, useRouter } from "next/navigation";
@@ -140,10 +141,34 @@ export default function Quiz({ questions }: { questions: questions[] }) {
           </div>
         ) : (
           <div className="w-full h-full flex flex-col">
-            <div className="w-full py-24  flex flex-col items-center">
+            <div className="w-full p-2 flex flex-col items-center pt-6">
               <div className="text-xl">총 점수</div>
               <div className="text-2xl font-semibold">
                 {Math.floor((score / selectedQuestions.length) * 100)}점
+              </div>
+              <div className="flex flex-col space-y-2 mt-4">
+                {selectedQuestions.map((data, key) => (
+                  <section
+                    key={key}
+                    className="flex items-center p-2 rounded-lg shadow-lg"
+                  >
+                    <div className="p-1">
+                      {result[key] ? (
+                        <CheckCircleIcon className="w-8 h-8 text-green-500" />
+                      ) : (
+                        <XCircleIcon className="w-8 h-8 text-red-500" />
+                      )}
+                    </div>
+                    <div>
+                      <div className="text-base font-semibold">
+                        {key + 1}. {data.question}
+                      </div>
+                      <div className="font-semibold mt-2 text-orange-600">
+                        정답: {data.answer}
+                      </div>
+                    </div>
+                  </section>
+                ))}
               </div>
             </div>
 
