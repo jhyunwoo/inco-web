@@ -1,5 +1,6 @@
 import BottomBar from "@/components/BottomBar";
 import HeadBar from "@/components/HeadBar";
+import Layout from "@/components/Layout";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
 
@@ -9,27 +10,22 @@ export default async function Home() {
   });
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center bg-slate-50">
+    <Layout>
       <HeadBar />
       <BottomBar />
-      <div className="flex overflow-x-scroll pb-10 scrollbar-hide snap-x snap-mandatory">
-        <div className="flex h-80 ">
-          {chapters.map((data, key) => (
-            <Link
-              href={`/chapter/${data.id}`}
-              key={key}
-              className="w-screen p-8 snap-center "
-            >
-              <div className=" bg-white p-4 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-start">
-                <div className="text-3xl font-semibold">
-                  Chapter {data.chapter}
-                </div>
-                <div className="text-xl font-medium mt-2">{data.title}</div>
-              </div>
-            </Link>
-          ))}
-        </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {chapters.map((data, key) => (
+          <Link
+            href={`/chapter/${data.id}`}
+            key={key}
+            className=" bg-white p-4 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-start"
+          >
+            <div className="text-2xl font-semibold">Chapter {data.chapter}</div>
+            <div className="text-xl font-medium mt-2">{data.title}</div>
+          </Link>
+        ))}
       </div>
-    </div>
+    </Layout>
   );
 }
