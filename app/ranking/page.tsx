@@ -1,5 +1,8 @@
 import prisma from "@/lib/prisma";
 import Reload from "./Reload";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/authOptions";
+import { redirect } from "next/navigation";
 
 export const fetchCache = "default-no-store";
 export const preferredRegion = "icn1";
@@ -55,6 +58,18 @@ export default async function Ranking() {
       return "Master";
     } else {
       return "Challenger";
+    }
+  }
+
+  const session = await getServerSession(authOptions);
+
+  if (session?.user?.email) {
+    const userInfo = await prisma.user.findUnique({
+      where: { email: session.user.email },
+    });
+    console.log(userInfo?.nickname);
+    if (!userInfo?.nickname) {
+      redirect("/profile/nickname");
     }
   }
 

@@ -1,13 +1,28 @@
 import BottomBar from "@/components/BottomBar";
 import HeadBar from "@/components/HeadBar";
 import Layout from "@/components/Layout";
+import { authOptions } from "@/lib/authOptions";
 import prisma from "@/lib/prisma";
+import { getServerSession } from "next-auth";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
   const chapters = await prisma.chapters.findMany({
     orderBy: { chapter: "asc" },
   });
+
+  const session = await getServerSession(authOptions);
+
+  if (session?.user?.email) {
+    const userInfo = await prisma.user.findUnique({
+      where: { email: session.user.email },
+    });
+    console.log(userInfo?.nickname);
+    if (!userInfo?.nickname) {
+      redirect("/profile/nickname");
+    }
+  }
 
   return (
     <Layout>

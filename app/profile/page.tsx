@@ -2,6 +2,7 @@ import { SignOutButton } from "@/components/AuthButton";
 import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
 import prisma from "@/lib/prisma";
+import { redirect } from "next/navigation";
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);
@@ -38,6 +39,16 @@ export default async function Profile() {
       return "Master";
     } else {
       return "Challenger";
+    }
+  }
+
+  if (session?.user?.email) {
+    const userInfo = await prisma.user.findUnique({
+      where: { email: session.user.email },
+    });
+    console.log(userInfo?.nickname);
+    if (!userInfo?.nickname) {
+      redirect("/profile/nickname");
     }
   }
 
@@ -118,6 +129,7 @@ export default async function Profile() {
     return (
       <div>
         <div>Invalid User</div>
+        <SignOutButton />
       </div>
     );
   }

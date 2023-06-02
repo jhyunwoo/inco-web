@@ -7,6 +7,7 @@ import { authOptions } from "@/lib/authOptions";
 import Recoil from "@/components/Recoil";
 import CustomLoading from "@/components/CustomLoading";
 import { Analytics } from "@vercel/analytics/react";
+import prisma from "@/lib/prisma";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -248,6 +249,7 @@ export default async function RootLayout({
   if (!session) {
     redirect("/api/auth/signin");
   }
+
   return (
     <AuthProvider>
       <Recoil>
