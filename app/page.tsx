@@ -19,10 +19,10 @@ export default async function Home() {
           <Link
             href={`/chapter/${data.id}`}
             key={key}
-            className=" bg-white p-4 rounded-lg shadow-lg w-full h-full flex flex-col justify-center items-start"
+            className=" bg-white p-4 rounded-lg h-40 shadow-lg hover:shadow-xl transition duration-200 flex flex-col justify-center items-start"
           >
             <div className="text-2xl font-semibold">Chapter {data.chapter}</div>
-            <div className="text-xl font-medium mt-2">{data.title}</div>
+            <div className="text-lg font-medium mt-2">{data.title}</div>
           </Link>
         ))}
       </div>
