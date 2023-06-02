@@ -62,7 +62,7 @@ export default async function Profile() {
             </div>
           </div>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow-xl grid grid-cols-2 gap-2">
+        <div className="bg-white p-4 rounded-lg shadow-xl grid grid-cols-1 gap-2">
           <div className="col-span-2 text-lg font-semibold text-center">
             랭크 기준
           </div>
