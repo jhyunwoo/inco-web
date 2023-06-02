@@ -50,13 +50,21 @@ export default function Quiz({ questions }: { questions: questions[] }) {
           stage: stageId,
         },
       });
-      router.replace(`/chapter/${chapter}`);
-      setIsLoading(false);
-      router.refresh();
-    } else {
-      router.replace(`/chapter/${chapter}`);
     }
+    setIsLoading(false);
   }
+
+  function backToMain() {
+    router.replace(`/chapter/${chapter}`);
+    setIsLoading(false);
+    router.refresh();
+  }
+
+  useEffect(() => {
+    if (questionNumber === selectedQuestions?.length) {
+      questionEnd();
+    }
+  }, [questionNumber, selectedQuestions?.length]);
 
   useEffect(() => {
     console.log(questions.length);
@@ -173,7 +181,7 @@ export default function Quiz({ questions }: { questions: questions[] }) {
             </div>
 
             <button
-              onClick={questionEnd}
+              onClick={backToMain}
               className="text-lg w-full p-3 px-4 text-center bg-sky-400 text-white font-semibold rounded-lg shadow-lg hover:bg-sky-500 transition duration-200 "
             >
               종료
