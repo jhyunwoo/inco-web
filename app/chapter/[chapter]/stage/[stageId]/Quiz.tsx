@@ -1,9 +1,14 @@
 "use client";
 
 import { loading } from "@/lib/recoil";
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
+import {
+  CheckCircleIcon,
+  ChevronDoubleLeftIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/outline";
 import type { questions } from "@prisma/client";
 import axios from "axios";
+import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
@@ -149,6 +154,13 @@ export default function Quiz({ questions }: { questions: questions[] }) {
           </div>
         ) : (
           <div className="w-full h-full flex flex-col">
+            <Link
+              href={"/"}
+              className="flex font-bold p-2 rounded-lg hover:bg-slate-100 transition duration-200 w-1/3"
+            >
+              <ChevronDoubleLeftIcon className="w-6 h-6 text-slate-950" />
+              <div>이전으로</div>
+            </Link>
             <div className="w-full p-2 flex flex-col items-center pt-6">
               <div className="text-xl">총 점수</div>
               <div className="text-2xl font-semibold">
