@@ -11,6 +11,7 @@ export default async function Ranking() {
   const userList = await prisma.user.findMany({
     select: {
       name: true,
+      nickname: true,
       point: true,
     },
     orderBy: {
@@ -67,7 +68,6 @@ export default async function Ranking() {
     const userInfo = await prisma.user.findUnique({
       where: { email: session.user.email },
     });
-    console.log(userInfo?.nickname);
     if (!userInfo?.nickname) {
       redirect("/profile/nickname");
     }
@@ -83,8 +83,8 @@ export default async function Ranking() {
         <div className="flex bg-slate-100 py-1 rounded-t-lg">
           <div className="w-3/12 text-center">랭크</div>
           <div className="w-2/12 text-center">순위</div>
-          <div className="w-4/12 text-center">이름</div>
-          <div className="w-3/12 text-center">점수</div>
+          <div className="w-5/12 text-center">이름</div>
+          <div className="w-2/12 text-center">점수</div>
         </div>
         {userList.map((data: any, key: number) => (
           <section
@@ -99,8 +99,10 @@ export default async function Ranking() {
               {getGradeName(data.point)}
             </div>
             <div className="w-2/12 text-base text-center">{key + 1}</div>
-            <div className="w-4/12 text-base text-center">{data.name}</div>
-            <div className="w-3/12 text-base text-center">{data.point}</div>
+            <div className="w-5/12 text-base text-center">
+              {data.nickname ? data.nickname : data.name}
+            </div>
+            <div className="w-2/12 text-base text-center">{data.point}</div>
           </section>
         ))}
       </div>

@@ -18,7 +18,6 @@ export default async function Home() {
     const userInfo = await prisma.user.findUnique({
       where: { email: session.user.email },
     });
-    console.log(userInfo?.nickname);
     if (!userInfo?.nickname) {
       redirect("/profile/nickname");
     }
