@@ -8,7 +8,8 @@ export async function PUT(request: Request) {
   const { result, chapter, stage } = requestData.data;
   const session = await getServerSession(authOptions);
   if (session) {
-    if (typeof session?.user?.email !== "string") return;
+    // @ts-ignore
+    if (typeof session?.session?.user?.email !== "string") return;
 
     let score = 0;
     for (let i = 0; i < result.length; i++) {
@@ -21,7 +22,8 @@ export async function PUT(request: Request) {
       data: {
         user: {
           connect: {
-            email: session.user.email,
+            // @ts-ignore
+            email: session.session.user.email,
           },
         },
         chapter: {
@@ -40,7 +42,8 @@ export async function PUT(request: Request) {
         let higestResult: any = await prisma.results.findFirst({
           where: {
             user: {
-              email: session.user.email,
+              // @ts-ignore
+              email: session.session.user.email,
             },
             chapter: {
               chapter: i + 1,
@@ -59,7 +62,8 @@ export async function PUT(request: Request) {
 
     const userUpdate = await prisma.user.update({
       where: {
-        email: session.user.email,
+        // @ts-ignore
+        email: session.session.user.email,
       },
       data: {
         point: point,
