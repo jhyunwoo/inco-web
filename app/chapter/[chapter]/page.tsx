@@ -27,7 +27,7 @@ export default async function Chapter({
   const highestStage1 = await prisma.results.findFirst({
     where: {
       user: {
-        email: session?.user?.email,
+        email: session?.session?.user?.email,
       },
       stage: 1,
       chapterId: chapter,
@@ -40,7 +40,7 @@ export default async function Chapter({
   const highestStage2 = await prisma.results.findFirst({
     where: {
       user: {
-        email: session?.user?.email,
+        email: session?.session?.user?.email,
       },
       stage: 2,
       chapterId: chapter,
@@ -53,7 +53,7 @@ export default async function Chapter({
   const highestStage3 = await prisma.results.findFirst({
     where: {
       user: {
-        email: session?.user?.email,
+        email: session?.session?.user?.email,
       },
       stage: 3,
       chapterId: chapter,
