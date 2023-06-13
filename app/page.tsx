@@ -24,6 +24,11 @@ export default async function Home() {
     }
   }
 
+  //@ts-ignore
+  if (!session?.session.user.nickname) {
+    redirect("/profile/nickname");
+  }
+
   return (
     <Layout>
       <HeadBar />

@@ -73,6 +73,11 @@ export default async function Ranking() {
     }
   }
 
+  //@ts-ignore
+  if (!session?.session.user.nickname) {
+    redirect("/profile/nickname");
+  }
+
   return (
     <div>
       <div className="flex justify-between items-center p-1">
