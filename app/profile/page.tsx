@@ -1,7 +1,6 @@
 import { SignOutButton } from "@/components/AuthButton";
 import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
-import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 
@@ -32,11 +31,11 @@ export default async function Profile() {
       return "Silver";
     } else if (score < 600) {
       return "Gold";
-    } else if (score < 800) {
-      return "Platinum";
     } else if (score < 1000) {
+      return "Platinum";
+    } else if (score < 1400) {
       return "Diamond";
-    } else if (score < 1500) {
+    } else if (score < 1800) {
       return "Master";
     } else {
       return "Challenger";
@@ -111,19 +110,19 @@ export default async function Profile() {
             <div className="bg-gradient-to-r from-cyan-600 via-blue-500 to-sky-600 p-1 px-2 rounded-md text-white text-center w-1/2">
               Diamond
             </div>
-            <div>800점</div>
+            <div>1000점</div>
           </div>
           <div className="flex items-center space-x-2 justify-between">
             <div className="bg-gradient-to-r from-purple-600 via-blue-500 to-violet-600 p-1 px-2 rounded-md text-white text-center w-1/2">
               Master
             </div>
-            <div>1000점</div>
+            <div>1400점</div>
           </div>
           <div className="flex items-center space-x-2 justify-between">
             <div className="bg-gradient-to-r from-red-400 via-yellow-400 to-blue-400 p-1 px-2 rounded-md text-white text-center w-1/2">
               Challenger
             </div>
-            <div>1500점</div>
+            <div>1800점</div>
           </div>
         </div>
         <div className="flex justify-center items-center p-16">
