@@ -42,6 +42,10 @@ export default async function Profile() {
     }
   }
   //@ts-ignore
+  if (!session?.session?.user.email) {
+    await redirect("/profile/email");
+  }
+  //@ts-ignore
   if (!session?.session.user.nickname) {
     redirect("/profile/nickname");
   }

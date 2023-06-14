@@ -23,10 +23,13 @@ export default async function Home() {
       redirect("/profile/nickname");
     }
   }
-
   //@ts-ignore
-  if (!session?.session.user.nickname) {
-    redirect("/profile/nickname");
+  if (!session?.session?.user.email) {
+    await redirect("/profile/email");
+  }
+  //@ts-ignore
+  if (!session?.session?.user?.nickname) {
+    await redirect("/profile/nickname");
   }
 
   return (
