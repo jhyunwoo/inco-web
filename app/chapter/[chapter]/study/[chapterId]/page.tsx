@@ -77,7 +77,6 @@ export default function Study({
               height={1000}
               placeholder={"blur"}
               blurDataURL={"/images/image-loading.png"}
-              loading={"lazy"}
             />
           </section>
         ))}
