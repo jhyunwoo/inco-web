@@ -75,7 +75,11 @@ export default async function Chapter({
           </div>
           <div className="text-xl font-semibold mt-1">{chapterInfo?.title}</div>
           <div className="text-lg mt-2">
-            총 {chapterInfo?.questions.length}문제
+            총{" "}
+            {chapterInfo?.questions.length
+              ? chapterInfo.questions.length
+              : "65"}
+            문제
           </div>
         </div>
         <div className="flex flex-col  w-full">
