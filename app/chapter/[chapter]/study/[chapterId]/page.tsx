@@ -73,10 +73,8 @@ export default function Study({
             <Image
               src={`/images/study/${image}.jpg`}
               alt={"study"}
-              width={1000}
-              height={1000}
-              placeholder={"blur"}
-              blurDataURL={"/images/image-loading.png"}
+              width={500}
+              height={500}
             />
           </section>
         ))}
