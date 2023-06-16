@@ -13,11 +13,11 @@ export default async function Profile() {
       return "bg-orange-400";
     } else if (score < 600) {
       return "bg-yellow-400";
-    } else if (score < 800) {
-      return "bg-gradient-to-r from-emerald-600 via-green-500 to-lime-600";
     } else if (score < 1000) {
-      return "bg-gradient-to-r from-cyan-600 via-blue-500 to-sky-600";
-    } else if (score < 1500) {
+      return "bg-gradient-to-r from-emerald-600 via-green-500 to-lime-600";
+    } else if (score < 1400) {
+      return "bg-gradient-to-r from-cyan-300 via-blue-600 to-sky-400";
+    } else if (score < 1800) {
       return "bg-gradient-to-r from-purple-600 via-blue-500 to-violet-600";
     } else {
       return "bg-gradient-to-r from-red-400 via-yellow-400 to-blue-400";
@@ -111,7 +111,7 @@ export default async function Profile() {
             <div>600점</div>
           </div>
           <div className="flex items-center space-x-2 justify-between">
-            <div className="bg-gradient-to-r from-cyan-600 via-blue-500 to-sky-600 p-1 px-2 rounded-md text-white text-center w-1/2">
+            <div className="bg-gradient-to-r from-cyan-300 via-blue-600 to-sky-400 p-1 px-2 rounded-md text-white text-center w-1/2">
               Diamond
             </div>
             <div>1000점</div>

@@ -108,6 +108,12 @@ export default async function Chapter({
       </div>
       <div className="flex flex-col  space-y-3 w-full justify-center ">
         <Link
+          href={`/chapter/${chapter}/study/${chapter}`}
+          className="bg-emerald-400 hover:bg-emerald-500 py-6 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"
+        >
+          시험범위 학습
+        </Link>
+        <Link
           href={`/chapter/${chapter}/stage/1`}
           className="bg-cyan-400 hover:bg-cyan-500 py-6 text-center transition duration-200 text-white p-4 rounded-xl text-2xl font-semibold"
         >
