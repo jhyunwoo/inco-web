@@ -73,8 +73,8 @@ export default function Study({
             <Image
               src={`/images/study/${image}.jpg`}
               alt={"study"}
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
             />
           </section>
         ))}
