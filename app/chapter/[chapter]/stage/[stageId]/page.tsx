@@ -6,7 +6,6 @@ export default async function ChapterStage1({
 }: {
   params: { chapter: string; stageId: string };
 }) {
-  console.log(chapter);
   if (chapter === "cliy8iwja0000znp9zvz635d8") {
     const questions = await prisma.questions.findMany({});
     return <Quiz questions={questions} />;

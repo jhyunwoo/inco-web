@@ -73,7 +73,7 @@ export default function Quiz({ questions }: { questions: questions[] }) {
 
   useEffect(() => {
     if (questions.length <= Number(stageId) * 10) {
-      setSelectedQuestions(questions);
+      setSelectedQuestions(shuffle(questions));
     } else {
       let randomQuestions: questions[] = [];
       for (let i = 0; i < Number(stageId) * 10; i++) {

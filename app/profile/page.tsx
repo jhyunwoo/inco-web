@@ -120,13 +120,13 @@ export default async function Profile() {
             <div className="bg-gradient-to-r from-purple-600 via-blue-500 to-violet-600 p-1 px-2 rounded-md text-white text-center w-1/2">
               Master
             </div>
-            <div>1400점</div>
+            <div>1500점</div>
           </div>
           <div className="flex items-center space-x-2 justify-between">
             <div className="bg-gradient-to-r from-red-400 via-yellow-400 to-blue-400 p-1 px-2 rounded-md text-white text-center w-1/2">
               Challenger
             </div>
-            <div>1800점</div>
+            <div>2100점</div>
           </div>
         </div>
         <div className="flex justify-center items-center p-16">
