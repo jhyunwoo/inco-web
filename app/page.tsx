@@ -44,23 +44,26 @@ export default async function Home() {
             key={key}
             className=" bg-white p-4 rounded-lg h-40 shadow-lg hover:shadow-xl transition duration-200 flex flex-col justify-center items-start"
           >
-            <div className="text-2xl font-semibold">Chapter {data.chapter}</div>
-            <div className="text-lg font-medium mt-2">{data.title}</div>
+            <div className="text-2xl font-semibold break-keep">
+              Chapter {data.chapter}
+            </div>
+            <div className="text-lg font-medium mt-2 break-keep">
+              {data.title}
+            </div>
           </Link>
         ))}
         <Link
           href={"https://yeonjunquiz.vercel.app/JungboTongsin/quiz"}
-          className=" bg-white p-4 rounded-lg h-40 shadow-lg hover:shadow-xl transition duration-200 flex flex-col justify-center items-start"
+          className=" bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-200 flex flex-col justify-center items-start"
         >
-          <div className="text-slate-600">광고</div>
-          <div className="text-lg font-medium flex">
-            시작부터 끝까지,
-            <strong className="text-sky-600 font-bold ml-1">정보통신</strong>은
-            누구나 김연준
+          <div className="text-slate-600 text-xs">광고</div>
+          <div className="text-sm sm:text-base font-medium break-keep mt-1">
+            시작부터 끝까지,{" "}
+            <span className="text-sky-600 font-bold">정보통신</span>은 누구나
+            김연준
           </div>
-          <div className="text-2xl font-semibold flex">
-            2023 2회고사도
-            <strong className="text-sky-600 font-bold ml-1">김연준</strong>만
+          <div className="text-lg sm:text-xl font-semibold mt-1 break-keep pb-4">
+            2회고사도 <span className="text-sky-600 font-bold">김연준</span>만
             믿고 따라 오세요.
           </div>
         </Link>
