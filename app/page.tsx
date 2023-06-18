@@ -48,6 +48,22 @@ export default async function Home() {
             <div className="text-lg font-medium mt-2">{data.title}</div>
           </Link>
         ))}
+        <Link
+          href={"https://yeonjunquiz.vercel.app/JungboTongsin/quiz"}
+          className=" bg-white p-4 rounded-lg h-40 shadow-lg hover:shadow-xl transition duration-200 flex flex-col justify-center items-start"
+        >
+          <div className="text-slate-600">광고</div>
+          <div className="text-lg font-medium flex">
+            시작부터 끝까지,
+            <strong className="text-sky-600 font-bold ml-1">정보통신</strong>은
+            누구나 김연준
+          </div>
+          <div className="text-2xl font-semibold flex">
+            2023 2회고사도
+            <strong className="text-sky-600 font-bold ml-1">김연준</strong>만
+            믿고 따라 오세요.
+          </div>
+        </Link>
       </div>
     </Layout>
   );

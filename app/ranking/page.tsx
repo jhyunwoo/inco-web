@@ -35,9 +35,9 @@ export default async function Ranking() {
       return "bg-yellow-400";
     } else if (score < 1000) {
       return "bg-gradient-to-r from-emerald-600 via-green-500 to-lime-600";
-    } else if (score < 1400) {
+    } else if (score < 1500) {
       return "bg-gradient-to-r from-cyan-300 via-blue-600 to-sky-400";
-    } else if (score < 1800) {
+    } else if (score < 2100) {
       return "bg-gradient-to-r from-purple-600 via-blue-500 to-violet-600";
     } else {
       return "bg-gradient-to-r from-red-400 via-yellow-400 to-blue-400";
@@ -53,9 +53,9 @@ export default async function Ranking() {
       return "Gold";
     } else if (score < 1000) {
       return "Platinum";
-    } else if (score < 1400) {
+    } else if (score < 1500) {
       return "Diamond";
-    } else if (score < 1800) {
+    } else if (score < 2100) {
       return "Master";
     } else {
       return "Challenger";
