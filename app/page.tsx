@@ -57,12 +57,12 @@ export default async function Home() {
           className=" bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-200 flex flex-col justify-center items-start"
         >
           <div className="text-slate-600 text-xs">광고</div>
-          <div className="text-sm sm:text-base font-medium break-keep mt-1">
+          <div className="text-base sm:text-lg font-medium break-keep mt-1">
             시작부터 끝까지,{" "}
             <span className="text-sky-600 font-bold">정보통신</span>은 누구나
             김연준
           </div>
-          <div className="text-lg sm:text-xl font-semibold mt-1 break-keep pb-4">
+          <div className="text-xl sm:text-2xl font-semibold mt-1 break-keep pb-4">
             2회고사도 <span className="text-sky-600 font-bold">김연준</span>만
             믿고 따라 오세요.
           </div>
