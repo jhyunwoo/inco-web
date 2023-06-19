@@ -18,11 +18,12 @@ export default function GoogleAnalytics({
 
     pageview(GA_MEASUREMENT_ID, url);
   }, [pathname, searchParams, GA_MEASUREMENT_ID]);
+
   return (
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-XF8NNSCT6H`}
       />
       <Script
         id="google-analytics"

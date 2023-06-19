@@ -251,17 +251,17 @@ export default async function RootLayout({
   }
 
   return (
-    <AuthProvider>
-      <Recoil>
-        <html lang="kr">
-          <GoogleAnalytics GA_MEASUREMENT_ID="G-XF8NNSCT6H" />
+    <html lang="kr">
+      <GoogleAnalytics GA_MEASUREMENT_ID="G-XF8NNSCT6H" />
+      <AuthProvider>
+        <Recoil>
           <body className={(inter.className, "scrollbar-hide")}>
             <CustomLoading />
             {children}
             <CookieBanner />
           </body>
-        </html>
-      </Recoil>
-    </AuthProvider>
+        </Recoil>
+      </AuthProvider>
+    </html>
   );
 }
