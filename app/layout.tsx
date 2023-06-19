@@ -6,7 +6,8 @@ import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/authOptions";
 import Recoil from "@/components/Recoil";
 import CustomLoading from "@/components/CustomLoading";
-import Script from "next/script";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieBanner from "@/components/cookiebanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -251,24 +252,13 @@ export default async function RootLayout({
 
   return (
     <html lang="kr">
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-XF8NNSCT6H"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-XF8NNSCT6H');
-        `}
-      </Script>
+      <GoogleAnalytics GA_MEASUREMENT_ID="G-XF8NNSCT6H" />
       <AuthProvider>
         <Recoil>
           <body className={(inter.className, "scrollbar-hide")}>
             <CustomLoading />
             {children}
+            <CookieBanner />
           </body>
         </Recoil>
       </AuthProvider>
