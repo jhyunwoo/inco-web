@@ -6,7 +6,8 @@ import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/authOptions";
 import Recoil from "@/components/Recoil";
 import CustomLoading from "@/components/CustomLoading";
-import { Analytics } from "@vercel/analytics/react";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieBanner from "@/components/cookiebanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -253,10 +254,11 @@ export default async function RootLayout({
     <AuthProvider>
       <Recoil>
         <html lang="kr">
+          <GoogleAnalytics GA_MEASUREMENT_ID="G-XF8NNSCT6H" />
           <body className={(inter.className, "scrollbar-hide")}>
             <CustomLoading />
             {children}
-            <Analytics />
+            <CookieBanner />
           </body>
         </html>
       </Recoil>
