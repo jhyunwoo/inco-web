@@ -32,7 +32,7 @@ model Account {
 }
 
 model Session {
-  id           String   @id @default(cuid())
+  id           String   @default(cuid()) @id
   sessionToken String   @unique
   userId       String
   expires      DateTime
@@ -40,7 +40,7 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String    @default(cuid()) @id
   name          String?
   nickname String?
   point         Int @default(0)
@@ -61,7 +61,7 @@ model VerificationToken {
 }
 
 model chapters {
-  id        String      @id @default(cuid())
+  id        String       @default(cuid()) @id
   chapter   Int
   title     String
   questions questions[]
@@ -69,7 +69,7 @@ model chapters {
 }
 
 model questions {
-  id         Int       @id @default(autoincrement())
+  id         Int       @default(autoincrement()) @id
   question   String
   options    String[]
   answer     String
@@ -79,7 +79,7 @@ model questions {
 }
 
 model results {
-  id         String    @id @default(cuid())
+  id         String    @default(cuid()) @id
   user       User      @relation(fields: [userId], references: [id])
   userId     String
   chapter chapters @relation(fields: [chapterId], references: [id])
